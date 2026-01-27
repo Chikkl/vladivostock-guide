@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Подбор гида во Владивостоке</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Анкета для подбора индивидуального гида во Владивостоке</h1>
+        <p class="subtitle">Цель: Помочь нам найти для вас идеального гида, который сделает ваше путешествие незабываемым.</p>
+
+        <form id="guideForm">
+            <!-- Раздел 1: Основная информация о путешествии -->
+            <div class="form-section">
+                <h2>Раздел 1: Основная информация о путешествии</h2>
+                <div class="form-group">
+                    <label for="visitDate">Даты вашего визита во Владивосток:</label>
+                    <input type="date" id="visitDate" name="visitDate" required>
+                </div>
+                <div class="form-group">
+                    <label>На какой срок вам нужен гид?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="guideDuration" value="hours" required> Несколько часов (обзорная экскурсия)</label>
+                        <label><input type="radio" name="guideDuration" value="fullDay"> Полный день (8-10 часов)</label>
+                        <label><input type="radio" name="guideDuration" value="hourly"> Почасовая работа (укажите желаемое количество часов)</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Сколько человек будет в вашей группе?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="groupSize" value="single" required> Я один(на) / пара</label>
+                        <label><input type="radio" name="groupSize" value="family"> Семья с детьми (укажите возраст и количество детей)</label>
+                        <label><input type="radio" name="groupSize" value="friends"> Компания друзей (3-6 человек)</label>
+                        <label><input type="radio" name="groupSize" value="large"> Большая группа (более 6 человек)</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Раздел 2: Ваши интересы и предпочтения -->
+            <div class="form-section">
+                <h2>Раздел 2: Ваши интересы и предпочтения</h2>
+                <div class="form-group">
+                    <label>Какие темы вам наиболее интересны?</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="interests" value="history"> История и архитектура (форты, Владивостокская крепость, старый город)</label>
+                        <label><input type="checkbox" name="interests" value="military"> Военная тематика и флот (подлодка С-56, корабли на набережной, военные музеи)</label>
+                        <label><input type="checkbox" name="interests" value="nature"> Природа и активный отдых (острова, нацпарк «Земля леопарда», поход на маяк, дайвинг)</label>
+                        <label><input type="checkbox" name="interests" value="gastronomy"> Гастрономия и рынки (дары моря, местный рынок, рестораны с панорамным видом, краб)</label>
+                        <label><input type="checkbox" name="interests" value="culture"> Культура и современная жизнь (театры, уличное искусство, кампус ДВФУ на о. Русский)</label>
+                        <label><input type="checkbox" name="interests" value="excursions"> Выездные экскурсии (Токаревский маяк, бухта Шамора, Сафари-парк, Арт-парк «Штыковские пруды»)</label>
+                        <label><input type="checkbox" name="interests" value="unusual"> Нестандартные маршруты (заброшки, индустриальные виды, локации из фильмов)</label>
+                        <label><input type="checkbox" name="interests" value="other"> Другой</label>
+                    </div>
+                    <input type="text" id="otherInterest" name="otherInterest" placeholder="Укажите другой интерес">
+                </div>
+                <div class="form-group">
+                    <label>Какой формат экскурсии вы предпочитаете?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="tourFormat" value="walking" required> Пешеходная</label>
+                        <label><input type="radio" name="tourFormat" value="car"> На автомобиле (гида / ваш / арендованный)</label>
+                        <label><input type="radio" name="tourFormat" value="combined"> Комбинированная (пешком + транспорт)</label>
+                        <label><input type="radio" name="tourFormat" value="boat"> Морская прогулка / катер</label>
+                        <label><input type="radio" name="tourFormat" value="other"> Другой</label>
+                    </div>
+                    <input type="text" id="otherTourFormat" name="otherTourFormat" placeholder="Укажите другой формат">
+                </div>
+                <div class="form-group">
+                    <label>Уровень физической активности:</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="activityLevel" value="low" required> Спокойный, с частыми остановками</label>
+                        <label><input type="radio" name="activityLevel" value="moderate"> Умеренный (готовы к пешим прогулкам)</label>
+                        <label><input type="radio" name="activityLevel" value="high"> Высокий (готовы к походам и сложным маршрутам)</label>
+                        <label><input type="radio" name="activityLevel" value="other"> Другой</label>
+                    </div>
+                    <input type="text" id="otherActivityLevel" name="otherActivityLevel" placeholder="Укажите другой уровень">
+                </div>
+            </div>
+
+            <!-- Раздел 3: Пожелания к гиду -->
+            <div class="form-section">
+                <h2>Раздел 3: Пожелания к гиду</h2>
+                <div class="form-group">
+                    <label>Язык общения:</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="language" value="russian" required> Русский</label>
+                        <label><input type="radio" name="language" value="english"> Английский</label>
+                        <label><input type="radio" name="language" value="chinese"> Китайский</label>
+                        <label><input type="radio" name="language" value="korean"> Корейский</label>
+                        <label><input type="radio" name="language" value="other"> Другой</label>
+                    </div>
+                    <input type="text" id="otherLanguage" name="otherLanguage" placeholder="Укажите другой язык">
+                </div>
+                <div class="form-group">
+                    <label>Возраст и стиль гида:</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="guideStyle" value="young" required> Молодой гид (активный, современный взгляд)</label>
+                        <label><input type="radio" name="guideStyle" value="experienced"> Опытный гид-историк (глубокие знания, академический подход)</label>
+                        <label><input type="radio" name="guideStyle" value="enthusiast"> Гид-энтузиаст, "влюбленный в город" (эмоциональные рассказы)</label>
+                        <label><input type="radio" name="guideStyle" value="professional"> Не важно, главное — профессионализм</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Специальные пожелания:</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="specialRequests" value="photographer"> Гид-фотограф (поможет с профессиональными снимками)</label>
+                        <label><input type="checkbox" name="specialRequests" value="children"> Гид с детьми (умеет увлечь детей)</label>
+                        <label><input type="checkbox" name="specialRequests" value="driver"> Гид-водитель (со своим автомобилем)</label>
+                        <label><input type="checkbox" name="specialRequests" value="accessible"> Доступная среда (гид, учитывающий ограничения по мобильности)</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Раздел 4: Бюджет и контакты -->
+            <div class="form-section">
+                <h2>Раздел 4: Бюджет и контакты</h2>
+                <div class="form-group">
+                    <label>Ваш примерный бюджет на услуги гида (в день или за всю программу):</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="budget" value="economy" required> Эконом (до X руб.)</label>
+                        <label><input type="radio" name="budget" value="standard"> Стандарт (X - Y руб.)</label>
+                        <label><input type="radio" name="budget" value="premium"> Премиум (готовы платить за эксклюзив и глубокую программу)</label>
+                        <label><input type="radio" name="budget" value="discuss"> Обсудим после предложений</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="name">Имя:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Телефон (WhatsApp/Telegram):</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="comments">Дополнительные комментарии или особые запросы:</label>
+                    <textarea id="comments" name="comments"></textarea>
+                </div>
+            </div>
+
+            <button type="button" id="submitBtn">Подобрать гида!</button>
+        </form>
+
+        <!-- Карточка гида (старая версия для совместимости) -->
+        <div id="guideCard" class="guide-card hidden">
+            <h2>Ваш подобранный гид:</h2>
+            <div id="guideInfo">
+                <h3 id="guideName"></h3>
+                <p id="guideSpecialization"></p>
+                <p id="guideTour"></p>
+                <p id="guideLanguages"></p>
+            </div>
+            <button type="button" id="resetBtn">Заполнить анкету заново</button>
+        </div>
+    </div>
+
+    <!-- Модальное окно для гида (гарантированно скрыто) -->
+    <div id="guideModal" class="modal" style="display: none;">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button type="button" id="closeModalBtn" class="close-btn">×</button>
+            <h2>Ваш подобранный гид:</h2>
+            <div id="modalGuideInfo">
+                <div class="guide-image-container">
+                    <img id="modalGuideImage" src="" alt="Фото гида" class="guide-image">
+                </div>
+                <div class="guide-details">
+                    <h3 id="modalGuideName"></h3>
+                    <p class="guide-profile" id="modalGuideProfile"></p>
+                    <div class="guide-info-section">
+                        <h4>Специализация:</h4>
+                        <p id="modalGuideSpecialization"></p>
+                    </div>
+                    <div class="guide-info-section">
+                        <h4>Формат тура:</h4>
+                        <p id="modalGuideFormat"></p>
+                    </div>
+                    <div class="guide-info-section">
+                        <h4>Для кого идеален:</h4>
+                        <p id="modalGuideIdealFor"></p>
+                    </div>
+                    <div class="guide-info-section">
+                        <h4>Особенность:</h4>
+                        <p id="modalGuideSpecialFeature"></p>
+                    </div>
+                    <div class="guide-info-section">
+                        <h4>Языки:</h4>
+                        <p id="modalGuideLanguages"></p>
+                    </div>
+                </div>
+            </div>
+            <button type="button" id="modalResetBtn">Заполнить анкету заново</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

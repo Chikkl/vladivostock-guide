@@ -1,0 +1,35 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# Node modules (если будут)
+node_modules/
+
+# Test files
+test_*.js
+debug_*.js
+
+# Office files (не относятся к проекту)
+*.docx
+*.pptx
+*.xlsx
+
+# System files
+desktop.ini
