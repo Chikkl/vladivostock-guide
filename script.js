@@ -56,6 +56,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const modalResetBtn = document.getElementById('modalResetBtn');
     const modalOverlay = document.querySelector('.modal-overlay');
 
+    console.log('🔍 Элементы найдены:');
+    console.log('Form:', form);
+    console.log('SubmitBtn:', submitBtn);
+    console.log('GuideCard:', guideCard);
+    console.log('GuideModal:', guideModal);
+
     // ГАРАНТИРУЕМ, что модальное окно изначально скрыто (используем inline style)
     if (guideModal) {
         guideModal.style.display = 'none';
@@ -66,8 +72,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Обработчики событий для кнопок
     if (submitBtn) {
+        console.log('✅ Кнопка submitBtn найдена, добавляем обработчики');
+        
         // Добавляем оба события: click для десктопа и touchstart для мобильных
         submitBtn.addEventListener('click', function(e) {
+            console.log('🖱️ Клик по кнопке!');
             e.preventDefault();
             if (validateForm()) {
                 findGuide();
@@ -76,11 +85,14 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Добавляем touchstart для лучшей поддержки мобильных устройств
         submitBtn.addEventListener('touchstart', function(e) {
+            console.log('📱 Касание кнопки!');
             e.preventDefault();
             if (validateForm()) {
                 findGuide();
             }
         }, { passive: false });
+    } else {
+        console.log('❌ Кнопка submitBtn не найдена!');
     }
 
     if (resetBtn) {

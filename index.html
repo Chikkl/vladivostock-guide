@@ -8,10 +8,11 @@
 </head>
 <body>
     <div class="container">
-        <h1>Анкета для подбора индивидуального гида во Владивостоке</h1>
-        <p class="subtitle">Цель: Помочь нам найти для вас идеального гида, который сделает ваше путешествие незабываемым.</p>
+        <div class="form-container">
+            <h1>Анкета для подбора индивидуального гида во Владивостоке</h1>
+            <p class="subtitle">Цель: Помочь нам найти для вас идеального гида, который сделает ваше путешествие незабываемым.</p>
 
-        <form id="guideForm">
+            <form id="guideForm">
             <!-- Раздел 1: Основная информация о путешествии -->
             <div class="form-section">
                 <h2>Раздел 1: Основная информация о путешествии</h2>
@@ -142,7 +143,7 @@
                 </div>
             </div>
 
-            <button type="button" id="submitBtn">Подобрать гида!</button>
+            <button type="button" id="submitBtn" class="primary-btn">Подобрать гида!</button>
         </form>
 
         <!-- Карточка гида (старая версия для совместимости) -->
@@ -154,7 +155,8 @@
                 <p id="guideTour"></p>
                 <p id="guideLanguages"></p>
             </div>
-            <button type="button" id="resetBtn">Заполнить анкету заново</button>
+            <button type="button" id="resetBtn" class="reset-btn">Заполнить анкету заново</button>
+        </div>
         </div>
     </div>
 
