@@ -4,7 +4,7 @@ const guides = [
         fullName: "Морозов Максим Петрович",
         profile: "Мужчина, 45 лет. Кандидат исторических наук, автор книг о Владивостокской крепости.",
         specialization: "Глубокие исторические экскурсии, форты, архитектура, военно-морская история.",
-        languages: ["Русский", "Английский"],
+        languages: ["Русский", "Английский", "Китайский"],
         tourFormat: "Пешеходный или на своем минивэне (для групп).",
         idealFor: "Для вдумчивых туристов, любителей истории, взрослых и студентов.",
         specialFeature: "Показывает архивные фото на планшете для сравнения 'было-стало'.",
@@ -170,10 +170,20 @@ document.addEventListener('DOMContentLoaded', function() {
         };
         const userLanguage = languageMap[selectedLanguage];
 
+        console.log('🔍 Ищем гида для языка:', userLanguage);
+        
         const filteredGuides = guides.filter(guide => guide.languages.includes(userLanguage));
-        const randomGuide = filteredGuides[Math.floor(Math.random() * filteredGuides.length)];
+        console.log('📋 Найдено гидов:', filteredGuides.length);
 
-        displayGuide(randomGuide);
+        if (filteredGuides.length === 0) {
+            // Если не найдено гидов для выбранного языка, используем первого доступного
+            console.log('⚠️  Гидов для этого языка не найдено, используем первого доступного');
+            const randomGuide = guides[Math.floor(Math.random() * guides.length)];
+            displayGuide(randomGuide);
+        } else {
+            const randomGuide = filteredGuides[Math.floor(Math.random() * filteredGuides.length)];
+            displayGuide(randomGuide);
+        }
     }
 
     function displayGuide(guide) {
