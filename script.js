@@ -66,11 +66,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Обработчики событий для кнопок
     if (submitBtn) {
-        submitBtn.addEventListener('click', function() {
+        // Добавляем оба события: click для десктопа и touchstart для мобильных
+        submitBtn.addEventListener('click', function(e) {
+            e.preventDefault();
             if (validateForm()) {
                 findGuide();
             }
         });
+        
+        // Добавляем touchstart для лучшей поддержки мобильных устройств
+        submitBtn.addEventListener('touchstart', function(e) {
+            e.preventDefault();
+            if (validateForm()) {
+                findGuide();
+            }
+        }, { passive: false });
     }
 
     if (resetBtn) {
@@ -84,7 +94,10 @@ document.addEventListener('DOMContentLoaded', function() {
     if (closeModalBtn) {
         closeModalBtn.addEventListener('click', function() {
             if (guideModal) {
-                guideModal.style.display = 'none';
+                guideModal.classList.remove('show');
+                setTimeout(() => {
+                    guideModal.style.display = 'none';
+                }, 300);
             }
         });
     }
@@ -92,7 +105,10 @@ document.addEventListener('DOMContentLoaded', function() {
     if (modalOverlay) {
         modalOverlay.addEventListener('click', function() {
             if (guideModal) {
-                guideModal.style.display = 'none';
+                guideModal.classList.remove('show');
+                setTimeout(() => {
+                    guideModal.style.display = 'none';
+                }, 300);
             }
         });
     }
@@ -103,7 +119,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 form.reset();
             }
             if (guideModal) {
-                guideModal.style.display = 'none';
+                guideModal.classList.remove('show');
+                setTimeout(() => {
+                    guideModal.style.display = 'none';
+                }, 300);
             }
         });
     }
@@ -166,6 +185,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Показываем модальное окно (используем inline style)
         guideModal.style.display = 'flex';
+        
+        // Добавляем класс для анимации
+        guideModal.classList.add('show');
 
         // Для совместимости также заполняем старую карточку гида
         document.getElementById('guideName').textContent = guide.fullName;

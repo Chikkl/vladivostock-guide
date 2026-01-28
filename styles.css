@@ -130,6 +130,8 @@ button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .modal-overlay {
@@ -151,6 +153,16 @@ button:hover {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     z-index: 1001;
     text-align: center;
+    transform: translateY(-20px);
+    transition: transform 0.3s ease;
+}
+
+.modal.show {
+    opacity: 1;
+}
+
+.modal.show .modal-content {
+    transform: translateY(0);
 }
 
 .close-btn {
